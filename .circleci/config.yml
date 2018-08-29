@@ -19,6 +19,10 @@ anchors:
         # Trust all of the .envrc files for direnv
         find . -name '.envrc' -exec direnv allow {} \;
 
+        echo '--install.frozen-lockfile true' >> ~/.yarnrc
+        echo '--install.non-interactive true' >> ~/.yarnrc
+        echo 'disable-self-update-check true' >> ~/.yarnrc
+
   - &install_workspace_dependencies
     run:
       name: Install Yarn workspace dependencies (node_modules)
